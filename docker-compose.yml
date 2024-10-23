@@ -10,6 +10,8 @@
         - ./src:/var/www/html
       depends_on:
         - db
+      env_file:
+        - .env
     db:
       build:
         context: .
@@ -24,8 +26,7 @@
         - "3306:3306"
       volumes:
         - mysql_data:/var/lib/mysql
-        - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
 
   volumes:
-    mysql_data:
+    mysql_data: {}
       # Define volume for persisting MySQL data

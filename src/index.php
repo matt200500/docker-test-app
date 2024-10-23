@@ -14,6 +14,23 @@
     $user = getenv('USER'); // user name    
     $rootpassword = getenv('ROOT_PASSWORD'); // root password
     $connection = new mysqli($database, $user, $rootpassword, $databasename);
+
+
+    // connecting to the database
+    if (!$databasename || !$user || !$rootpassword) {
+        echo "Environment variables are not set.";
+    } else {
+        // Create a new mysqli connection
+        $connection = new mysqli($database, $user, $rootpassword, $databasename);
+        
+        // Check connection to the database
+        if ($connection->connect_error) {
+            die("Connection failed: " . $connection->connect_error);
+        }
+        echo "Connected successfully to the database.";
+    }
+
+
     
 
     ?>
