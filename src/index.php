@@ -9,6 +9,13 @@
     <?php
     // Your PHP code goes here
     echo "Hello, world!";
+    $database = 'db'; // database service from docker compose
+    $databasename = getenv('DATABASE'); // database name
+    $user = getenv('USER'); // user name    
+    $rootpassword = getenv('ROOT_PASSWORD'); // root password
+    $connection = new mysqli($database, $user, $rootpassword, $databasename);
+    
+
     ?>
     
 </body>
