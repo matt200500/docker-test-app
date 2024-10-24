@@ -11,6 +11,8 @@ if (!isset($_SESSION['username'])) {
 <html>
 <head>
     <title>Userpage</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <h1>Welcome to the user page</h1>
