@@ -16,8 +16,8 @@
         $databasename = getenv('DATABASE'); // database name
         $user = getenv('USER'); // user name    
         $rootpassword = getenv('ROOT_PASSWORD'); // root password
+        $admin = "admin";
         $connection = new mysqli($database, $user, $rootpassword, $databasename); // create connection to database
-
 
         // Check connection to the database
         if ($connection->connect_error) {
@@ -43,8 +43,13 @@
                 $row = $result->fetch_assoc();
                 if (password_verify($password, $row['password'])) {
                     $_SESSION['username'] = $username; // Store username of active user
-                    echo "<script>window.location.href='userpage.php';</script>";
-                    exit();
+                    if($username === $admin){
+                        echo "<script>window.location.href='adminpage.php';</script>";
+                        exit();
+                    }else{
+                        echo "<script>window.location.href='userpage.php';</script>";
+                        exit();
+                    }
                 } else{
                     echo "<script>alert('Invalid username or password');</script>";
                     echo "<script>window.location.href='index.php';</script>";
