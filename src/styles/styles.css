@@ -124,6 +124,27 @@ input{
     font-size: clamp(2rem, calc(3vw + 1vh), 5rem); /*dynamically change font size*/
 }
 
+.user-page p {
+    text-align: center;
+    padding-bottom: 20px;
+    margin-bottom: 0px;
+    margin-top: 0;
+    color: #777777; 
+    font-family: monospace;
+    font-size: clamp(1vw, calc(3vw + 1vh), 2rem); /*dynamically change font size*/
+}
+
+.user-page h2 {
+    text-align: center;
+    padding-bottom: 20px;
+    margin-bottom: 0px;
+    margin-top: 0;
+    color: #777777; 
+    font-family: monospace;
+    font-size: clamp(1vw, calc(3vw + 1vh), 2rem); /*dynamically change font size*/
+}
+
+
 
 /*----------------------------- FOR THE ADMIN PAGE --------------------------------------*/
 
