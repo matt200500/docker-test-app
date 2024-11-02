@@ -13,9 +13,9 @@
         <?php
         // Your PHP code goes here
         $database = 'db'; // database service from docker compose
-        $databasename = getenv('DATABASE'); // database name
-        $user = getenv('USER'); // user name    
-        $rootpassword = getenv('ROOT_PASSWORD'); // root password
+        $databasename = getenv('MYSQL_DATABASE'); // database name
+        $user = getenv('MYSQL_USER'); // user name    
+        $rootpassword = getenv('MYSQL_ROOT_PASSWORD'); // root password
         $admin = "admin";
         $connection = new mysqli($database, $user, $rootpassword, $databasename); // create connection to database
 

@@ -36,9 +36,9 @@ if ($_SESSION['username'] !== $admin) {
 
         // Connect to the database below
         $database = 'db'; 
-        $databasename = getenv('DATABASE'); // database name
-        $user = getenv('USER');
-        $rootpassword = getenv('ROOT_PASSWORD');
+        $databasename = getenv('MYSQL_DATABASE'); // database name
+        $user = getenv('MYSQL_USER');
+        $rootpassword = getenv('MYSQL_ROOT_PASSWORD');
         $connection = new mysqli($database, $user, $rootpassword, $databasename);
 
         // Check connection
